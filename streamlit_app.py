@@ -3,8 +3,8 @@ import plotly.express as px
 import streamlit as st
 
 # Display title and text
-st.title("Week 1 - Data and visualization")
-st.markdown("Here we can see the dataframe created during this weeks project.")
+st.title("Amsterdam Airbnb listings Data and visualization")
+st.markdown("Access the datafarame to find the listings below 100 pounds")
 
 # Read dataframe
 dataframe = pd.read_csv(
@@ -34,7 +34,12 @@ dataframe["Location"] = dataframe["Location"].replace(
 
 # Display dataframe and text
 st.dataframe(dataframe)
-st.markdown("Below is a map showing all the Airbnb listings with a red dot and the location we've chosen with a blue dot.")
+st.markdown(" Airbnb listings are in red dot and the location we've chosen, Rujiksm Museum, in a blue dot.")
+
+st.write(
+    """Interact with the map to check the pricing, location and the distance from the museum by selecting the listings to find the prefect one that matches your preferences
+    """
+)
 
 # Create the plotly express figure
 fig = px.scatter_mapbox(
